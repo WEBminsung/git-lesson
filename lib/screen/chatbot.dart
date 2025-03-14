@@ -35,9 +35,7 @@ class _ChatBotPageState extends State<ChatBotScreen> {
   @override
   Widget build(BuildContext context) {
     return
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+      Scaffold(
           backgroundColor: Color(0xFFF6F6F6),
           body: Stack(
             children: [
@@ -138,7 +136,6 @@ class _ChatBotPageState extends State<ChatBotScreen> {
               ),
             ],
           ),
-        )
       );
 
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled9/screen/chatbot.dart';
+import 'package:untitled9/screen/eatmed1.dart';
+import 'package:untitled9/screen/recording.dart';
 import 'package:untitled9/screen/settings.dart';
 
 
@@ -10,9 +12,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+      Scaffold(
           body: Column(
             children: [
               // 커스텀 앱바
@@ -82,16 +82,16 @@ class MainScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       _buildButton('복용 알림/여부', (){
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => SettingScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Eatmed1()),
+                        );
                       }),
                       _buildButton('주의사항 녹음', (){
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => Main()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => RecordingScreen()),
+                        );
                       }),
                       _buildButton('카메라 인식', (){
                         // Navigator.push(
@@ -105,7 +105,6 @@ class MainScreen extends StatelessWidget {
               ),
             ],
           ),
-        )
       );
 
   }

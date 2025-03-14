@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled9/screen/alert_sound.dart';
+import 'package:untitled9/screen/card_registration.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -16,9 +18,7 @@ class _SettingsPageState extends State<SettingScreen> {
   Widget build(BuildContext context) {
 
     return
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+      Scaffold(
           backgroundColor: Color(0xFFF6F6F6), // 연한 회색 배경
           body: Column(
             children: [
@@ -71,7 +71,12 @@ class _SettingsPageState extends State<SettingScreen> {
                         activeColor: Colors.blue,
                       )),
                       _buildDivider(),
-                      _buildNavigationButton('알림음', () {}),
+                      _buildNavigationButton('알림음', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AlertSound()),
+                        );
+                      }),
                       _buildDivider(),
                       _buildSettingTile('진동', Switch(
                         value: vibration,
@@ -112,7 +117,12 @@ class _SettingsPageState extends State<SettingScreen> {
                         activeColor: Colors.blue,
                       )),
                       _buildDivider(),
-                      _buildNavigationButton('NFC 등록', () {}),
+                      _buildNavigationButton('NFC 등록', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CardRegistration()),
+                        );
+                      }),
                       _buildDivider(),
                       Spacer(),
                       Padding(
@@ -138,7 +148,6 @@ class _SettingsPageState extends State<SettingScreen> {
               ),
             ],
           ),
-        )
       );
 
   }
